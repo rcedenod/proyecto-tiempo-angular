@@ -39,7 +39,7 @@ export class Reloj01Component implements OnInit {
 
   startClock(): void {
     if (this.intervalId) {
-      clearInterval(this.intervalId); // Limpiar intervalos anteriores
+      clearInterval(this.intervalId); 
     }
 
     this.intervalId = setInterval(() => {
@@ -48,14 +48,11 @@ export class Reloj01Component implements OnInit {
   }
 
   updateClock(): void {
-    // Obtener la hora actual
     const now = new Date();
-    
-    // Calcular la hora actual sumando los inputs de horas, minutos y segundos
+
     const targetDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(),
       parseInt(this.hours, 10), parseInt(this.minutes, 10), parseInt(this.seconds, 10));
 
-    // Avanzar un segundo
     targetDate.setSeconds(targetDate.getSeconds() + 1);
 
     this.hours = String(targetDate.getHours()).padStart(2, '0');
@@ -65,40 +62,14 @@ export class Reloj01Component implements OnInit {
   }
 
   onTimeChange(): void {
-    // Validar entradas y asegurarse de que estén dentro de los límites
     this.hours = String(Math.max(0, Math.min(23, parseInt(this.hours, 10)))).padStart(2, '0');
     this.minutes = String(Math.max(0, Math.min(59, parseInt(this.minutes, 10)))).padStart(2, '0');
     this.seconds = String(Math.max(0, Math.min(59, parseInt(this.seconds, 10)))).padStart(2, '0');
   }
 
   onInputChange() {
-    // Actualizar el reloj en tiempo real cuando se cambia el input
     this.onTimeChange();
     this.updateClock();
   }
 }
 
-//   hours: string = '';
-//   minutes: string = '';
-//   seconds: string = '';
-//   date: string = '';
-//   period: string = '';
-//   day: string = '';
-
-//   ngOnInit(): void {
-//     this.updateClock();
-//     setInterval(() => this.updateClock(), 1000);
-//   }
-
-//   updateClock(): void {
-//     const now = new Date();
-//     const hour24 = now.getHours(); 
-//     this.hours = String(hour24 % 12 || 12).padStart(2, '0');
-//     this.minutes = String(now.getMinutes()).padStart(2, '0');
-//     this.seconds = String(now.getSeconds()).padStart(2, '0');
-//     this.period = hour24 < 12 ? 'AM' : 'PM';
-//     this.date = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
-//     const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-//     this.day = daysOfWeek[now.getDay()];
-//   }
-// }

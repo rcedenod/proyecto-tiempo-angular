@@ -1,15 +1,43 @@
 <div class="circular-progress-container">
-    <div class="circular-progress hour-progress">
-      <div class="progress" [style.--progress]="hoursProgress + 'deg'"></div>
-      <div class="hours">{{ hours }}</div>
-    </div>
-    <div class="circular-progress minute-progress">
-      <div class="progress" [style.--progress]="minutesProgress + 'deg'"></div>
-      <div class="minutes">{{ minutes }}</div>
-    </div>
-    <div class="circular-progress second-progress">
-      <div class="progress" [style.--progress]="secondsProgress + 'deg'"></div>
-      <div class="seconds">{{ seconds }}</div>
-    </div>
+  <div class="circular-progress hour-progress">
+    <div class="progress" [style.--progress]="hoursProgress + 'deg'"></div>
+    <div class="hours">{{ hours }}</div>
   </div>
-  
+  <div class="circular-progress minute-progress">
+    <div class="progress" [style.--progress]="minutesProgress + 'deg'"></div>
+    <div class="minutes">{{ minutes }}</div>
+  </div>
+  <div class="circular-progress second-progress">
+    <div class="progress" [style.--progress]="secondsProgress + 'deg'"></div>
+    <div class="seconds">{{ seconds }}</div>
+  </div>
+</div>
+
+<div class="time-inputs">
+  <label for="hours">Horas:</label>
+  <input 
+      type="number" 
+      [(ngModel)]="inputHours" 
+      min="0" 
+      max="23" 
+      placeholder="Hours" 
+      (ngModelChange)="setTime()" />
+  <label for="minutes">Minutos:</label>
+  <input 
+      type="number" 
+      [(ngModel)]="inputMinutes" 
+      min="0" 
+      max="59" 
+      placeholder="Minutes" 
+      (ngModelChange)="setTime()" />
+  <label for="seconds">Segundos:</label>
+  <input 
+      type="number" 
+      [(ngModel)]="inputSeconds" 
+      min="0" 
+      max="59" 
+      placeholder="Seconds" 
+      (ngModelChange)="setTime()" />
+</div>
+
+

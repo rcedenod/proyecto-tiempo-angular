@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';  // Importar FormsModule
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-bars',
@@ -19,9 +19,9 @@ export class BarsComponent implements OnInit {
   minuteProgress: number = 0;
   secondProgress: number = 0;
 
-  hoursArray = Array.from({ length: 25 }, (_, i) => i); // 0-24 horas
-  minutesArray = Array.from({ length: 13 }, (_, i) => i * 5); // 0-60 en pasos de 5
-  secondsArray = Array.from({ length: 13 }, (_, i) => i * 5); // 0-60 en pasos de 5
+  hoursArray = Array.from({ length: 25 }, (_, i) => i); 
+  minutesArray = Array.from({ length: 13 }, (_, i) => i * 5); 
+  secondsArray = Array.from({ length: 13 }, (_, i) => i * 5); 
 
   ngOnInit(): void {
     this.setInitialTime();

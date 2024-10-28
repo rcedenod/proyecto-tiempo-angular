@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-circulargraph',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './circulargraph.component.html',
   styleUrl: './circulargraph.component.css'
 })
 export class CirculargraphComponent implements OnInit, OnDestroy{
-
 
   hours: string = '';
   minutes: string = ''; 
@@ -18,18 +18,13 @@ export class CirculargraphComponent implements OnInit, OnDestroy{
   hoursProgress: number = 0;
   private intervalId: any;
 
+  inputHours: number = 0;
+  inputMinutes: number = 0;
+  inputSeconds: number = 0;
+
   ngOnInit() {
     this.initializeProgressBasedOnCurrentTime();
     this.startTimer();
-
-    this.updateSeconds();
-    setInterval(() => this.updateSeconds(), 1000);
-
-    this.updateMinutes();
-    setInterval(() => this.updateMinutes(), 1000);
-
-    this.updateHours();
-    setInterval(() => this.updateHours(), 1000);
   }
 
   ngOnDestroy() {
@@ -38,9 +33,10 @@ export class CirculargraphComponent implements OnInit, OnDestroy{
 
   initializeProgressBasedOnCurrentTime() {
     const now = new Date();
-    this.secondsProgress = (now.getSeconds() / 60) * 360;
-    this.minutesProgress = (now.getMinutes() / 60) * 360;
-    this.hoursProgress = ((now.getHours() % 12) / 12) * 360;
+    this.inputSeconds = now.getSeconds();
+    this.inputMinutes = now.getMinutes();
+    this.inputHours = now.getHours();
+    this.updateProgress();
   }
 
   startTimer() {
@@ -50,11 +46,20 @@ export class CirculargraphComponent implements OnInit, OnDestroy{
   }
 
   updateProgress() {
-    this.secondsProgress = (this.secondsProgress + 6) % 360; 
-    if (this.secondsProgress === 0) {
-      this.minutesProgress = (this.minutesProgress + 6) % 360; 
-      if (this.minutesProgress === 0) {
-        this.hoursProgress = (this.hoursProgress + 30) % 360; 
+    this.secondsProgress = (this.inputSeconds / 60) * 360;
+    this.minutesProgress = (this.inputMinutes / 60) * 360;
+    this.hoursProgress = ((this.inputHours % 12) / 12) * 360;
+
+    this.inputSeconds++;
+    if (this.inputSeconds >= 60) {
+      this.inputSeconds = 0;
+      this.inputMinutes++;
+      if (this.inputMinutes >= 60) {
+        this.inputMinutes = 0;
+        this.inputHours++;
+        if (this.inputHours >= 24) {
+          this.inputHours = 0;
+        }
       }
     }
 
@@ -63,20 +68,23 @@ export class CirculargraphComponent implements OnInit, OnDestroy{
     this.updateHours();
   }
 
-
   updateSeconds(): void {
-    const now = new Date();
-    this.seconds = String(now.getSeconds()).padStart(2, '0');
+    this.seconds = String(this.inputSeconds).padStart(2, '0');
   }
 
   updateMinutes(): void {
-    const now = new Date();
-    this.minutes = String(now.getMinutes()).padStart(2, '0');
+    this.minutes = String(this.inputMinutes).padStart(2, '0');
   }
 
   updateHours(): void {
-    const now = new Date();
-    this.hours = String(now.getHours()).padStart(2, '0');
+    this.hours = String(this.inputHours).padStart(2, '0');
   }
 
+  setTime() {
+    this.inputSeconds = Math.max(0, Math.min(59, Math.floor(this.inputSeconds))); 
+    this.inputMinutes = Math.max(0, Math.min(59, this.inputMinutes));
+    this.inputHours = Math.max(0, Math.min(23, this.inputHours));
+    this.updateProgress();
+  }
 }
+
