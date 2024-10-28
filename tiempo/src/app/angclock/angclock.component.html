@@ -1,0 +1,12 @@
+<div class="clock-container">
+    <div class="clock-face">
+      <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" class="hour-mark">
+        <div class="hour-label" [ngStyle]="getHourPosition(i)">{{ i }}</div>
+      </div>
+
+      <div class="hand hour" [style.transform]="'rotate(' + hourRotation + 'deg)'"></div>
+      <div class="hand minute" [style.transform]="'rotate(' + minuteRotation + 'deg)'"></div>
+      <div class="hand second" [style.transform]="'rotate(' + secondRotation + 'deg)'"></div>
+    </div>
+  </div>
+  

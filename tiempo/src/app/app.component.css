@@ -1,0 +1,9 @@
+.message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita scrolls adicionales */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina relleno */
+    color: white;
+}

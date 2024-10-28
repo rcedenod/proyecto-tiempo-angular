@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="dgclock01">
+      <span class="date">{{ day }}, {{ date }}</span>
+      <span class="time">{{ hours }}</span><span class="separator">:</span>
+      <span class="time">{{ minutes }}</span><span class="separator">:</span>
+      <span class="time">{{ seconds }}</span>
+    </div>
+  
+    <div class="inputs-container">
+      <label for="hours">Horas:</label>
+      <input
+        type="number"
+        id="hours"
+        min="0"
+        max="23"
+        [(ngModel)]="hours"
+        (input)="onInputChange()"
+      />
+      <label for="minutes">Minutos:</label>
+      <input
+        type="number"
+        id="minutes"
+        min="0"
+        max="59"
+        [(ngModel)]="minutes"
+        (input)="onInputChange()"
+      />
+      <label for="seconds">Segundos:</label>
+      <input
+        type="number"
+        id="seconds"
+        min="0"
+        max="59"
+        [(ngModel)]="seconds"
+        (input)="onInputChange()"
+      />
+    </div>
+  </div>
+  
+
+<!-- <div class="container">
+    <div class="dgclock01">
+        <span class="date">{{ day }}, {{ date }}</span>
+        <span class="time">{{ hours }}</span><span class="separator">:</span>
+        <span class="time">{{ minutes }}</span><span class="separator">:</span>
+        <span class="time">{{ seconds }}</span>
+        <span class="period">{{ period }}</span>
+    </div>
+</div> -->
+
+  
+
+
+

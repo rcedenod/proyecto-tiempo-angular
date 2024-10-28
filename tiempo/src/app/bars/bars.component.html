@@ -1,0 +1,116 @@
+<div class="progress-clock">
+  
+  <div class="progress-container">
+    <label>Horas</label>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="hourProgress"></div>
+      <div class="markers">
+        <div *ngFor="let hour of hoursArray" class="marker"></div>
+      </div>
+    </div>
+    <div class="number-bar">
+      <div *ngFor="let hour of hoursArray" class="number">{{ hour }}</div>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <label>Minutos</label>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="minuteProgress"></div>
+      <div class="markers">
+        <div *ngFor="let minute of minutesArray" class="marker"></div>
+      </div>
+    </div>
+    <div class="number-bar">
+      <div *ngFor="let minute of minutesArray" class="number">{{ minute }}</div>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <label>Segundos</label>
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="secondProgress"></div>
+      <div class="markers">
+        <div *ngFor="let second of secondsArray" class="marker"></div>
+      </div>
+    </div>
+    <div class="number-bar">
+      <div *ngFor="let second of secondsArray" class="number">{{ second }}</div>
+    </div>
+  </div>
+
+  <div class="inputs-container">
+    <label for="hours">Horas:</label>
+    <input
+      type="number"
+      id="hours"
+      min="0"
+      max="23"
+      [(ngModel)]="hours"
+      (input)="onTimeChange()"
+    />
+    <label for="minutes">Minutos:</label>
+    <input
+      type="number"
+      id="minutes"
+      min="0"
+      max="59"
+      [(ngModel)]="minutes"
+      (input)="onTimeChange()"
+    />
+    <label for="seconds">Segundos:</label>
+    <input
+      type="number"
+      id="seconds"
+      min="0"
+      max="59"
+      [(ngModel)]="seconds"
+      (input)="onTimeChange()"
+    />
+  </div>
+</div>
+
+
+<!-- <div class="progress-clock">
+  
+    <div class="progress-container">
+      <label>Horas</label>
+      <div class="progress-bar">
+        <div class="progress" [style.width.%]="hourProgress"></div>
+        <div class="markers">
+          <div *ngFor="let hour of hoursArray" class="marker"></div>
+        </div>
+      </div>
+      <div class="number-bar">
+        <div *ngFor="let hour of hoursArray" class="number">{{ hour }}</div>
+      </div>
+    </div>
+  
+    <div class="progress-container">
+      <label>Minutos</label>
+      <div class="progress-bar">
+        <div class="progress" [style.width.%]="minuteProgress"></div>
+        <div class="markers">
+          <div *ngFor="let minute of minutesArray" class="marker"></div>
+        </div>
+      </div>
+      <div class="number-bar">
+        <div *ngFor="let minute of minutesArray" class="number">{{ minute }}</div>
+      </div>
+    </div>
+  
+    <div class="progress-container">
+      <label>Segundos</label>
+      <div class="progress-bar">
+        <div class="progress" [style.width.%]="secondProgress"></div>
+        <div class="markers">
+          <div *ngFor="let second of secondsArray" class="marker"></div>
+        </div>
+      </div>
+      <div class="number-bar">
+        <div *ngFor="let second of secondsArray" class="number">{{ second }}</div>
+      </div>
+    </div>
+  </div>
+  
+   -->

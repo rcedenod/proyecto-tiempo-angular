@@ -1,0 +1,23 @@
+<div class="dropdown">
+  <div (click)="toggleDropdown()" class="menu-icon">
+    <img src="assets/icons/dropdown.svg" alt="Menu" />
+  </div>
+
+  <div class="dropdown-menu" *ngIf="isOpen">
+    <button (click)="selectOption('Reloj digital')" class="dropdown-item">
+      Reloj digital
+    </button>
+
+    <button (click)="selectOption('Tiempo con barras')" class="dropdown-item">
+      Tiempo con barras
+    </button>
+
+    <button (click)="selectOption('Reloj analogico')" class="dropdown-item">
+      Reloj analogico
+    </button>
+
+    <button (click)="selectOption('Grafico circular')" class="dropdown-item">
+      Grafico circular
+    </button>
+  </div>
+</div>

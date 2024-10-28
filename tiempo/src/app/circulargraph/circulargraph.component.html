@@ -1,0 +1,15 @@
+<div class="circular-progress-container">
+    <div class="circular-progress hour-progress">
+      <div class="progress" [style.--progress]="hoursProgress + 'deg'"></div>
+      <div class="hours">{{ hours }}</div>
+    </div>
+    <div class="circular-progress minute-progress">
+      <div class="progress" [style.--progress]="minutesProgress + 'deg'"></div>
+      <div class="minutes">{{ minutes }}</div>
+    </div>
+    <div class="circular-progress second-progress">
+      <div class="progress" [style.--progress]="secondsProgress + 'deg'"></div>
+      <div class="seconds">{{ seconds }}</div>
+    </div>
+  </div>
+  
