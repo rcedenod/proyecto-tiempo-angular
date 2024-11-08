@@ -8,6 +8,7 @@ import { BinaryclockComponent } from './binaryclock/binaryclock.component';
 import { TextclockComponent } from './textclock/textclock.component';
 import { MatrixClockComponent } from './matrixclock/matrixclock.component';
 import { PixelclockComponent } from './pixelclock/pixelclock.component';
+import { CumulativeclockComponent } from './cumulativeclock/cumulativeclock.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -19,6 +20,6 @@ export const routes: Routes = [
   { path: 'binaryclock', component: BinaryclockComponent},
   { path: 'textclock', component: TextclockComponent},
   { path: 'matrixclock', component: MatrixClockComponent},
-  { path: 'pixelclock', component: PixelclockComponent }
-
+  { path: 'pixelclock', component: PixelclockComponent },
+  { path: 'cumulativeclock', component: CumulativeclockComponent }
 ];

@@ -1,0 +1,70 @@
+<div class="cumulative-clock">
+    <div class="unit-hours">
+      <label class="time">Horas</label>
+      <div class="blocks-hours">
+        <div 
+          *ngFor="let hour of hours" 
+          [ngClass]="{'block': true, 'active': hour < currentHour, 'inactive': hour >= currentHour}">
+        </div>
+      </div>
+    </div>
+  
+    <div class="unit-ms">
+      <label class="time">Minutos</label>
+      <div class="blocks-ms">
+        <div 
+          *ngFor="let minute of minutes" 
+          [ngClass]="{'block': true, 'active': minute < currentMinute, 'inactive': minute >= currentMinute}">
+        </div>
+      </div>
+    </div>
+  
+    <div class="unit-ms">
+      <label class="time">Segundos</label>
+      <div class="blocks-ms">
+        <div 
+          *ngFor="let second of seconds" 
+          [ngClass]="{'block': true, 'active': second < currentSecond, 'inactive': second >= currentSecond}">
+        </div>
+      </div>
+    </div>
+
+    <div class="inputs-container">
+        <div class="input-group">
+          <label for="hours">Horas:</label>
+          <input
+            type="number"
+            id="hours"
+            min="0"
+            max="23"
+            [(ngModel)]="currentHour"
+            (input)="onTimeChange()"
+          />
+        </div>
+    
+        <div class="input-group">
+          <label for="minutes">Minutos:</label>
+          <input
+            type="number"
+            id="minutes"
+            min="0"
+            max="59"
+            [(ngModel)]="currentMinute"
+            (input)="onTimeChange()"
+          />
+        </div>
+    
+        <div class="input-group">
+          <label for="seconds">Segundos:</label>
+          <input
+            type="number"
+            id="seconds"
+            min="0"
+            max="59"
+            [(ngModel)]="currentSecond"
+            (input)="onTimeChange()"
+          />
+        </div>
+      </div>
+  </div>
+  

@@ -63,5 +63,10 @@ export class DropdownComponent {
       this.router.navigate(['pixelclock/']);
       this.isOpen = false; 
     }
+
+    else if (option === 'Reloj acumulativo') {
+      this.router.navigate(['cumulativeclock/']);
+      this.isOpen = false; 
+    }
   }
 }
