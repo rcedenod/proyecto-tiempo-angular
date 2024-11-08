@@ -53,5 +53,10 @@ export class DropdownComponent {
       this.router.navigate(['/textclock']);
       this.isOpen = false; 
     }
+
+    else if (option === 'Reloj tipo matrix') {
+      this.router.navigate(['/matrixclock']);
+      this.isOpen = false; 
+    }
   }
 }

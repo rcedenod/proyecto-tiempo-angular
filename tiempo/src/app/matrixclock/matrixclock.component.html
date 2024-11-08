@@ -1,0 +1,53 @@
+<div class="matrix-container">
+    <div class="matrix-content">
+      <div class="matrix-column" *ngFor="let column of matrixColumns">
+        <div *ngFor="let number of column" class="matrix-number">
+          {{ number }}
+        </div>
+      </div>
+      <div class="time-display">
+        {{ currentTime }}
+      </div>
+    </div>
+
+    <div class="img-container"></div>
+    
+    <div class="inputs-container">
+        <div class="input-group">
+          <label for="hours">Horas:</label>
+          <input
+            type="number"
+            id="hours"
+            min="0"
+            max="23"
+            [(ngModel)]="hours"
+            (input)="onTimeChange()"
+          />
+        </div>
+    
+        <div class="input-group">
+          <label for="minutes">Minutos:</label>
+          <input
+            type="number"
+            id="minutes"
+            min="0"
+            max="59"
+            [(ngModel)]="minutes"
+            (input)="onTimeChange()"
+          />
+        </div>
+    
+        <div class="input-group">
+          <label for="seconds">Segundos:</label>
+          <input
+            type="number"
+            id="seconds"
+            min="0"
+            max="59"
+            [(ngModel)]="seconds"
+            (input)="onTimeChange()"
+          />
+        </div>
+      </div>
+  </div>
+  
