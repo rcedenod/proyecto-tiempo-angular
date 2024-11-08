@@ -5,6 +5,7 @@ import { AngclockComponent } from './angclock/angclock.component';
 import { CirculargraphComponent } from './circulargraph/circulargraph.component';
 import { OrbitclockComponent } from './orbitclock/orbitclock.component';
 import { BinaryclockComponent } from './binaryclock/binaryclock.component';
+import { TextclockComponent } from './textclock/textclock.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'angclock', component: AngclockComponent },
   { path: 'circulargraph', component: CirculargraphComponent},
   { path: 'orbitclock', component: OrbitclockComponent},
-  { path: 'binaryclock', component: BinaryclockComponent}
+  { path: 'binaryclock', component: BinaryclockComponent},
+  { path: 'textclock', component: TextclockComponent}
 ];

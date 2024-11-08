@@ -48,5 +48,10 @@ export class DropdownComponent {
       this.router.navigate(['/binaryclock']);
       this.isOpen = false; 
     }
+
+    else if (option === 'Reloj con texto plano') {
+      this.router.navigate(['/textclock']);
+      this.isOpen = false; 
+    }
   }
 }

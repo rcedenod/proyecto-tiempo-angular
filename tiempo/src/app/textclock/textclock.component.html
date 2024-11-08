@@ -1,0 +1,46 @@
+<div class="text-clock">
+    <p>Son las <span class="time-segment hours">{{ convertToWords(hours % 12 || 12) }}</span></p>
+    <p>y <span class="time-segment minutes">{{ convertToWords(minutes) }}</span> minutos, con </p>
+    <p><span class="time-segment seconds">{{ convertToWords(seconds) }}</span> segundos</p>
+    <p><span class="time-segment period">{{ period }}</span></p>
+
+
+</div>
+  
+<div class="inputs-container">
+    <div class="input-group">
+      <label for="hours">Horas:</label>
+      <input
+        type="number"
+        id="hours"
+        min="0"
+        max="23"
+        [(ngModel)]="hours"
+        (input)="onTimeChange()"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="minutes">Minutos:</label>
+      <input
+        type="number"
+        id="minutes"
+        min="0"
+        max="59"
+        [(ngModel)]="minutes"
+        (input)="onTimeChange()"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="seconds">Segundos:</label>
+      <input
+        type="number"
+        id="seconds"
+        min="0"
+        max="59"
+        [(ngModel)]="seconds"
+        (input)="onTimeChange()"
+      />
+    </div>
+  </div>
