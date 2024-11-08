@@ -1,0 +1,95 @@
+<div class="orbit-clock">
+
+  <div class="orbit hour-orbit"></div>
+  <div class="orbit minute-orbit"></div>
+  <div class="orbit second-orbit"></div>
+
+  <div
+    class="point"
+    [ngStyle]="{
+      left: 'calc(50% + ' + getOrbitPosition(currentHour, 12, hourRadius).x + ')',
+      top: 'calc(50% + ' + getOrbitPosition(currentHour, 12, hourRadius).y + ')'
+    }"
+  ></div>
+
+  <div
+    class="point"
+    [ngStyle]="{
+      left: 'calc(50% + ' + getOrbitPosition(currentMinute, 60, minuteRadius).x + ')',
+      top: 'calc(50% + ' + getOrbitPosition(currentMinute, 60, minuteRadius).y + ')'
+    }"
+  ></div>
+
+  <div
+    class="point"
+    [ngStyle]="{
+      left: 'calc(50% + ' + getOrbitPosition(currentSecond, 60, secondRadius).x + ')',
+      top: 'calc(50% + ' + getOrbitPosition(currentSecond, 60, secondRadius).y + ')'
+    }"
+  ></div>
+
+  <div *ngFor="let hour of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+       class="number hour-number"
+       [ngStyle]="{
+         left: 'calc(50% + ' + getNumberPosition(hour, 12, hourRadius).x + ')',
+         top: 'calc(50% + ' + getNumberPosition(hour, 12, hourRadius).y + ')'
+       }">
+    {{ hour }}
+  </div>
+
+  <div *ngFor="let minute of getMinutesAndSecondsArray(60)"
+       class="number minute-number"
+       [ngStyle]="{
+         left: 'calc(50% + ' + getNumberPosition(minute, 60, minuteRadius).x + ')',
+         top: 'calc(50% + ' + getNumberPosition(minute, 60, minuteRadius).y + ')'
+       }">
+    {{ minute }}
+  </div>
+
+  <div *ngFor="let second of getMinutesAndSecondsArray(60)"
+       class="number second-number"
+       [ngStyle]="{
+         left: 'calc(50% + ' + getNumberPosition(second, 60, secondRadius).x + ')',
+         top: 'calc(50% + ' + getNumberPosition(second, 60, secondRadius).y + ')'
+       }">
+    {{ second }}
+  </div>
+
+  <div class="inputs-container">
+    <div class="input-group">
+      <label for="hours">Horas:</label>
+      <input
+        type="number"
+        id="hours"
+        min="0"
+        max="23"
+        [(ngModel)]="currentHour"
+        (input)="onTimeChange()"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="minutes">Minutos:</label>
+      <input
+        type="number"
+        id="minutes"
+        min="0"
+        max="59"
+        [(ngModel)]="currentMinute"
+        (input)="onTimeChange()"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="seconds">Segundos:</label>
+      <input
+        type="number"
+        id="seconds"
+        min="0"
+        max="59"
+        [(ngModel)]="currentSecond"
+        (input)="onTimeChange()"
+      />
+    </div>
+  </div>
+</div>

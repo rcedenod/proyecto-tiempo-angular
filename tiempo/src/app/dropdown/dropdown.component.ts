@@ -38,5 +38,10 @@ export class DropdownComponent {
       this.router.navigate(['/circulargraph']);
       this.isOpen = false; 
     }
+
+    else if (option === 'Reloj de orbita') {
+      this.router.navigate(['/orbitclock']);
+      this.isOpen = false; 
+    }
   }
 }
