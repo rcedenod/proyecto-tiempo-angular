@@ -1,0 +1,114 @@
+.clock {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+}
+
+.digit {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.segment {
+  background-color: #222;
+}
+
+.on {
+  background-color: #a00000;
+}
+
+.off {
+  background-color: #222;
+}
+
+.top {
+  grid-column: span 3;
+  height: 20px;
+  width: 40px;
+  justify-self: center; 
+}
+
+.middle {
+  grid-column: span 3;
+  height: 20px;
+  width: 40px; 
+  justify-self: center;
+}
+
+.bottom {
+  grid-column: span 3;
+  height: 20px;
+  width: 40px; 
+  justify-self: center;
+}
+
+.top-left {
+  grid-row: span 2;
+  width: 20px;
+}
+
+.top-right {
+  grid-row: span 2;
+  width: 20px;
+  grid-column: 3; 
+}
+
+.bottom-left {
+  grid-row: span 2;
+  width: 20px;
+}
+
+.bottom-right {
+  grid-row: span 2;
+  width: 20px;
+  grid-column: 3; 
+}
+
+.separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 40px;
+  font-size: 36px;  
+  color: #810000;   
+  font-weight: bold;
+}
+
+.inputs-container {
+  position: absolute;
+  top:70%;
+  left: 35%;
+  transform: translateY(-50%);
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.input-group {
+  margin-bottom: 15px; 
+}
+
+label {
+  color: white;
+  font-size: 1em;
+  margin-bottom: 5px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding-left: 15px;
+}
+
+input {
+  width: 50px;
+  padding: 5px;
+  font-size: 1em;
+  margin: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: dimgrey;
+  padding-right: 10px;
+}

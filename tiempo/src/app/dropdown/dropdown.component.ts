@@ -58,5 +58,10 @@ export class DropdownComponent {
       this.router.navigate(['/matrixclock']);
       this.isOpen = false; 
     }
+
+    else if (option === 'Reloj de pixeles') {
+      this.router.navigate(['pixelclock/']);
+      this.isOpen = false; 
+    }
   }
 }
