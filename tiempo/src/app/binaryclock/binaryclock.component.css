@@ -38,7 +38,7 @@
   }
   
   .binary-bit div.active {
-    background-color: green;
+    background-color: rgb(29, 42, 164);
   }
   
   .time-inputs {

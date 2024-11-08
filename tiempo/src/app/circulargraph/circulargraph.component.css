@@ -22,7 +22,7 @@
     height: 100%;
     border-radius: 50%; 
     background-image: conic-gradient(
-      #4caf50 var(--progress),
+      #83902c var(--progress),
       transparent var(--progress) 
     );
     position: absolute;
