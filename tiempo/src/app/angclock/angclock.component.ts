@@ -32,9 +32,22 @@ export class AngclockComponent implements OnInit {
   }
 
   updateClock(): void {
-    this.hourRotation = (this.hours % 12) * 30 + this.minutes * 0.5; 
-    this.minuteRotation = this.minutes * 6; 
-    this.secondRotation = this.seconds * 6; 
+    this.seconds++;
+    if (this.seconds === 60) {
+      this.seconds = 0;
+      this.minutes++;
+      if (this.minutes === 60) {
+        this.minutes = 0;
+        this.hours++;
+        if (this.hours === 24) {
+          this.hours = 0;
+        }
+      }
+    }
+
+    this.hourRotation = (this.hours % 12) * 30 + this.minutes * 0.5;
+    this.minuteRotation = this.minutes * 6;
+    this.secondRotation = this.seconds * 6;
   }
 
   onTimeChange(): void {

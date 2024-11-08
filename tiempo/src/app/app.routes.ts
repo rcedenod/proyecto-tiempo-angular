@@ -4,6 +4,7 @@ import { BarsComponent } from './bars/bars.component';
 import { AngclockComponent } from './angclock/angclock.component';
 import { CirculargraphComponent } from './circulargraph/circulargraph.component';
 import { OrbitclockComponent } from './orbitclock/orbitclock.component';
+import { BinaryclockComponent } from './binaryclock/binaryclock.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'barsclock', component: BarsComponent },
   { path: 'angclock', component: AngclockComponent },
   { path: 'circulargraph', component: CirculargraphComponent},
-  { path: 'orbitclock', component: OrbitclockComponent}
+  { path: 'orbitclock', component: OrbitclockComponent},
+  { path: 'binaryclock', component: BinaryclockComponent}
 ];

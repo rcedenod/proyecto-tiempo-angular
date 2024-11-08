@@ -43,5 +43,10 @@ export class DropdownComponent {
       this.router.navigate(['/orbitclock']);
       this.isOpen = false; 
     }
+
+    else if (option === 'Reloj binario') {
+      this.router.navigate(['/binaryclock']);
+      this.isOpen = false; 
+    }
   }
 }

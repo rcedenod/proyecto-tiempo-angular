@@ -40,8 +40,6 @@ export class BarsComponent implements OnInit {
     this.hourProgress = (this.hours / 24) * 100;
     this.minuteProgress = (this.minutes / 60) * 100;
     this.secondProgress = (this.seconds / 60) * 100;
-
-    // Avanzar un segundo
     this.incrementTime();
   }
 
@@ -54,7 +52,7 @@ export class BarsComponent implements OnInit {
         this.minutes = 0;
         this.hours++;
         if (this.hours >= 24) {
-          this.hours = 0; // Reiniciar a 0 después de 23 horas
+          this.hours = 0;
         }
       }
     }
@@ -71,36 +69,3 @@ export class BarsComponent implements OnInit {
     this.updateProgress();
   }
 }
-//   hours: number = 0;
-//   minutes: number = 0;
-//   seconds: number = 0;
-//   currentTime: string = '';
-
-//   hourProgress: number = 0;
-//   minuteProgress: number = 0;
-//   secondProgress: number = 0;
-
-//   hoursArray = Array.from({ length: 25 }, (_, i) => i); // 0-24 horas
-//   minutesArray = Array.from({ length: 13 }, (_, i) => i * 5); // 0-60 en pasos de 5
-//   secondsArray = Array.from({ length: 13 }, (_, i) => i * 5); // 0-60 en pasos de 5
-
-//   ngOnInit(): void {
-//     this.updateTime();
-//     setInterval(() => this.updateTime(), 1000);
-//   }
-
-//   updateTime(): void {
-//     const now = new Date();
-//     this.hours = now.getHours();
-//     this.minutes = now.getMinutes();
-//     this.seconds = now.getSeconds();
-//     this.hourProgress = (this.hours / 24) * 100;
-//     this.minuteProgress = (this.minutes / 60) * 100;
-//     this.secondProgress = (this.seconds / 60) * 100;
-//   }
-
-//   formatNumber(value: number): string {
-//     return value < 10 ? '0' + value : value.toString();
-//   }
-
-// }

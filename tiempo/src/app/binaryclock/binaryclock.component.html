@@ -1,0 +1,39 @@
+<div class="binary-clock">
+    <div>
+      <div class="binary-row">
+        <div *ngFor="let bit of binaryTime.hours; let i = index" class="binary-bit">
+          <span class="power-label">{{ getPowerOfTwo(4 - i) }}</span>
+          <div [class.active]="bit === '1'"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <div class="binary-row">
+        <div *ngFor="let bit of binaryTime.minutes; let i = index" class="binary-bit">
+          <span class="power-label">{{ getPowerOfTwo(5 - i) }}</span>
+          <div [class.active]="bit === '1'"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div>
+      <div class="binary-row">
+        <div *ngFor="let bit of binaryTime.seconds; let i = index" class="binary-bit">
+          <span class="power-label">{{ getPowerOfTwo(5 - i) }}</span>
+          <div [class.active]="bit === '1'"></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="time-inputs">
+        <label for="hours">Horas:</label>
+        <input type="number" id="hours" [(ngModel)]="inputHours" (input)="onTimeChange()" min="0" max="23" />
+        <label for="minutes">Minutos:</label>
+        <input type="number" id="minutes" [(ngModel)]="inputMinutes" (input)="onTimeChange()" min="0" max="59" />
+        <label for="seconds">Segundos:</label>
+        <input type="number" id="seconds" [(ngModel)]="inputSeconds" (input)="onTimeChange()" min="0" max="59" />
+    </div>
+  
+  </div>
+  
