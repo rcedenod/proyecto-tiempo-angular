@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DropdownComponent } from '../dropdown/dropdown.component';
 
 @Component({
   selector: 'app-reloj01',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, DropdownComponent],
   templateUrl: './reloj01.component.html',
   styleUrl: './reloj01.component.css'
 })

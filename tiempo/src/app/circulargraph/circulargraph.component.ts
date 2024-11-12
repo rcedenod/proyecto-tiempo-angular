@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DropdownComponent } from "../dropdown/dropdown.component";
 
 @Component({
   selector: 'app-circulargraph',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, DropdownComponent],
   templateUrl: './circulargraph.component.html',
   styleUrl: './circulargraph.component.css'
 })

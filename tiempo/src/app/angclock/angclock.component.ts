@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DropdownComponent } from '../dropdown/dropdown.component';
 @Component({
   selector: 'app-angclock',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, DropdownComponent],
   templateUrl: './angclock.component.html',
   styleUrl: './angclock.component.css'
 })

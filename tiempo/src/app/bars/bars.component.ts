@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; 
+import { DropdownComponent } from '../dropdown/dropdown.component';
 
 @Component({
   selector: 'app-bars',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, DropdownComponent],
   templateUrl: './bars.component.html',
   styleUrl: './bars.component.css'
 })

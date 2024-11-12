@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DropdownComponent } from '../dropdown/dropdown.component';
+
 
 @Component({
   selector: 'app-textclock',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, DropdownComponent],
   templateUrl: './textclock.component.html',
   styleUrl: './textclock.component.css'
 })
